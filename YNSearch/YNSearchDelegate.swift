@@ -10,7 +10,7 @@ import UIKit
 
 public protocol YNSearchDelegate: YNSearchMainViewDelegate, YNSearchListViewDelegate { }
 
-public protocol YNSearchMainViewDelegate {
+@objc public protocol YNSearchMainViewDelegate {
     func ynCategoryButtonClicked(text: String)
     
     func ynSearchHistoryButtonClicked(text: String)
@@ -19,7 +19,7 @@ public protocol YNSearchMainViewDelegate {
 
 }
 
-public protocol YNSearchListViewDelegate {    
+@objc public protocol YNSearchListViewDelegate {    
     func ynSearchListViewClicked(key: String)
     
     func ynSearchListViewClicked(object: Any)
