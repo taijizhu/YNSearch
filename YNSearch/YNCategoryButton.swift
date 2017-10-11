@@ -67,7 +67,7 @@ open class YNCategoryButton: UIButton {
     open func initVIew() {
         self.layer.borderColor = UIColor.darkGray.cgColor
         self.layer.borderWidth = 1
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         self.setTitleColor(UIColor.darkGray, for: .normal)
         self.setTitleColor(UIColor.lightGray, for: .highlighted)
         self.layer.cornerRadius = self.frame.height * 0.1
