@@ -72,7 +72,7 @@ open class YNSearchMainView: UIView {
         self.categoryLabel.textColor = UIColor.darkGray
         self.addSubview(self.categoryLabel)
         
-        let font = UIFont.systemFont(ofSize: 12)
+        let font = UIFont.systemFont(ofSize: 14)
         let userAttributes = [NSFontAttributeName : font, NSForegroundColorAttributeName: UIColor.gray]
         
         var formerWidth: CGFloat = margin
