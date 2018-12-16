@@ -8,13 +8,13 @@
 
 import UIKit
 
-open class YNSearchListView: UITableView, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
-    open var database = [Any]()
-    open var searchResultDatabase = [Any]()
+@objc open class YNSearchListView: UITableView, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+    @objc open var database = [Any]()
+    @objc open var searchResultDatabase = [Any]()
     
-    open var ynSearchListViewDelegate: YNSearchListViewDelegate?
-    open var ynSearch = YNSearch()
-    open var ynSearchTextFieldText: String? {
+    @objc open var ynSearchListViewDelegate: YNSearchListViewDelegate?
+    @objc open var ynSearch = YNSearch()
+    @objc open var ynSearchTextFieldText: String? {
         didSet {
             guard let text = ynSearchTextFieldText else { return }
 
@@ -34,7 +34,7 @@ open class YNSearchListView: UITableView, UITableViewDelegate, UITableViewDataSo
         self.initView()
     }
     
-    open func initData(database: [Any]) {
+    public func initData(database: [Any]) {
         self.database = database
         self.searchResultDatabase = database
         self.reloadData()
