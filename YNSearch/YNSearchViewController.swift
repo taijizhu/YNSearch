@@ -22,7 +22,8 @@ open class YNSearchViewController: UIViewController, UITextFieldDelegate {
     open var ynSearchView: YNSearchView!
     
     open var ynSerach = YNSearch()
-
+    open var ynDelegate: YNSearchViewControllerDelegate?
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,6 +62,9 @@ open class YNSearchViewController: UIViewController, UITextFieldDelegate {
         self.ynSearchView.ynSearchListView.initData(database: database)
     }
 
+    open func loadDatas() {
+        self.delegate?.requestDataReload()
+    }
     
     // MARK: - YNSearchTextfield
     @objc open func ynSearchTextfieldcancelButtonClicked() {

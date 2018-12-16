@@ -74,7 +74,7 @@ open class YNSearchMainView: UIView {
         
 
         let font = UIFont.systemFont(ofSize: 14)
-        let userAttributes = [NSFontAttributeName : font, NSForegroundColorAttributeName: UIColor.gray]
+        let userAttributes = [NSAttributedString.Key.font : font, NSAttributedString.Key.foregroundColor: UIColor.gray]
         
         var formerWidth: CGFloat = margin
         var formerHeight: CGFloat = 50
