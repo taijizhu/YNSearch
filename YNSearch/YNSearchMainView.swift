@@ -8,23 +8,23 @@
 
 import UIKit
 
-open class YNSearchMainView: UIView {
+@objc open class YNSearchMainView: UIView {
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
 
-    open var categoryLabel: UILabel!
-    open var ynCategoryButtons = [YNCategoryButton]()
+    @objc open var categoryLabel: UILabel!
+    @objc open var ynCategoryButtons = [YNCategoryButton]()
     
-    open var searchHistoryLabel: UILabel!
-    open var ynSearchHistoryViews = [YNSearchHistoryView]()
-    open var ynSearchHistoryButtons = [YNSearchHistoryButton]()
-    open var clearHistoryButton: UIButton!
+    @objc open var searchHistoryLabel: UILabel!
+    @objc open var ynSearchHistoryViews = [YNSearchHistoryView]()
+    @objc open var ynSearchHistoryButtons = [YNSearchHistoryButton]()
+    @objc open var clearHistoryButton: UIButton!
 
     
-    var margin: CGFloat = 15
-    open var delegate: YNSearchMainViewDelegate?
+    @objc var margin: CGFloat = 15
+    @objc open var delegate: YNSearchMainViewDelegate?
     
-    open var ynSearch = YNSearch()
+    @objc open var ynSearch = YNSearch()
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,7 +33,7 @@ open class YNSearchMainView: UIView {
         self.initView(categories: categories)
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    @objc required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -65,7 +65,7 @@ open class YNSearchMainView: UIView {
         self.redrawSearchHistoryButtons()
     }
     
-    open func initView(categories: [String]) {
+    @objc open func initView(categories: [String]) {
         self.categoryLabel = UILabel(frame: CGRect(x: margin, y: 0, width: width - 40, height: 50))
         self.categoryLabel.text = "Categories"
         self.categoryLabel.font = UIFont.systemFont(ofSize: 13)
@@ -105,7 +105,7 @@ open class YNSearchMainView: UIView {
         
     }
     
-    open func redrawSearchHistoryButtons() {
+    @objc open func redrawSearchHistoryButtons() {
         for ynSearchHistoryView in ynSearchHistoryViews {
             ynSearchHistoryView.removeFromSuperview()
         }
