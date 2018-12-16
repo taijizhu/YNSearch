@@ -40,8 +40,9 @@ import UIKit
         self.ynSearchView.frame = CGRect(x: 0, y: 70 + safeAreaTopInset, width: width, height: height - 70 - safeAreaTopInset)
     }
 
-    open func ynSearchinit() {
-        self.ynSearchTextfieldView = YNSearchTextFieldView(frame: CGRect(x: 20, y: 20, width: width - 40, height: 50))
+    @objc open func ynSearchinit() {
+        self.ynSearchTextfieldView = YNSearchTextFieldView(frame: CGRect(x: 20, y: 20, width: width-40, height: 50))
+
         self.ynSearchTextfieldView.ynSearchTextField.delegate = self
         self.ynSearchTextfieldView.ynSearchTextField.addTarget(self, action: #selector(ynSearchTextfieldTextChanged(_:)), for: .editingChanged)
         self.ynSearchTextfieldView.cancelButton.addTarget(self, action: #selector(ynSearchTextfieldcancelButtonClicked), for: .touchUpInside)
@@ -58,11 +59,11 @@ import UIKit
         self.ynSearchView.ynSearchMainView.setYNCategoryButtonType(type: .colorful)
     }
     
-    open func initData(database: [Any]) {
+    @objc open func initData(database: [Any]) {
         self.ynSearchView.ynSearchListView.initData(database: database)
     }
 
-    open func loadDatas() {
+    @objc open func loadDatas() {
         self.delegate?.requestDataReload()
     }
     
@@ -87,7 +88,7 @@ import UIKit
     }
     
     // MARK: - UITextFieldDelegate
-    open func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    @objc open func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text else { return true }
         if !text.isEmpty {
             self.ynSerach.appendSearchHistories(value: text)
@@ -97,7 +98,7 @@ import UIKit
         return true
     }
     
-    open func textFieldDidBeginEditing(_ textField: UITextField) {
+    @objc open func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.3, animations: {
             self.ynSearchView.ynSearchMainView.alpha = 0
             self.ynSearchTextfieldView.cancelButton.alpha = 1
