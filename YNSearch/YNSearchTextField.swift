@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class YNSearchTextField: UITextField {
+@objc open class YNSearchTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -36,8 +36,8 @@ open class YNSearchTextField: UITextField {
 }
 
 open class YNSearchTextFieldView: UIView {
-    open var ynSearchTextField: YNSearchTextField!
-    open var cancelButton: UIButton!
+    @objc open var ynSearchTextField: YNSearchTextField!
+    @objc open var cancelButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
