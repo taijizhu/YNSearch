@@ -44,23 +44,23 @@ open class YNSearchMainView: UIView {
         }
     }
     
-    open func ynCategoryButtonClicked(_ sender: UIButton) {
+    @objc open func ynCategoryButtonClicked(_ sender: UIButton) {
         guard let text = ynCategoryButtons[sender.tag].titleLabel?.text else { return }
         ynSearch.appendSearchHistories(value: text)
         self.delegate?.ynCategoryButtonClicked(text: text)
     }
     
-    open func ynSearchHistoryButtonClicked(_ sender: UIButton) {
+    @objc open func ynSearchHistoryButtonClicked(_ sender: UIButton) {
         guard let text = ynSearchHistoryButtons[sender.tag].textLabel.text else { return }
         self.delegate?.ynSearchHistoryButtonClicked(text: text)
     }
     
-    open func clearHistoryButtonClicked() {
+    @objc open func clearHistoryButtonClicked() {
         ynSearch.setSearchHistories(value: [String]())
         self.redrawSearchHistoryButtons()
     }
     
-    open func closeButtonClicked(_ sender: UIButton) {
+    @objc open func closeButtonClicked(_ sender: UIButton) {
         ynSearch.deleteSearchHistories(index: sender.tag)
         self.redrawSearchHistoryButtons()
     }
@@ -79,7 +79,7 @@ open class YNSearchMainView: UIView {
         var formerHeight: CGFloat = 50
         
         for i in 0..<categories.count {
-            let size = categories[i].size(attributes: userAttributes)
+            let size = categories[i].size(withAttributes: userAttributes)
             if i > 0 {
                 formerWidth = ynCategoryButtons[i-1].frame.size.width + ynCategoryButtons[i-1].frame.origin.x + 10
                 if formerWidth + size.width + margin > UIScreen.main.bounds.width {
@@ -133,7 +133,7 @@ open class YNSearchMainView: UIView {
             ynSearchHistoryButtons.append(view.ynSearchHistoryButton)
             self.addSubview(view)
         }
-        guard let lastHistoryView = self.ynSearchHistoryViews.last else { return }
+        let lastHistoryView = self.ynSearchHistoryViews.last ?? YNSearchHistoryView()
         
         self.clearHistoryButton = UIButton(frame: CGRect(x: margin, y: lastHistoryView.frame.origin.y + lastHistoryView.frame.height, width: width - (margin * 2), height: 40))
         self.clearHistoryButton.setTitle("Clear search history", for: .normal)
