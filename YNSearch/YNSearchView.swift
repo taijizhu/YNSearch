@@ -8,12 +8,12 @@
 
 import UIKit
 
-open class YNSearchView: UIView, YNSearchMainViewDelegate, YNSearchListViewDelegate {
-    open var delegate: YNSearchDelegate?
+@objc open class YNSearchView: UIView, YNSearchMainViewDelegate, YNSearchListViewDelegate {
+    @objc open var delegate: YNSearchDelegate?
     
-    open var ynScrollView: UIScrollView!
-    open var ynSearchMainView: YNSearchMainView!
-    open var ynSearchListView: YNSearchListView!
+    @objc open var ynScrollView: UIScrollView!
+    @objc open var ynSearchMainView: YNSearchMainView!
+    @objc open var ynSearchListView: YNSearchListView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
