@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class YNSearchViewController: UIViewController, UITextFieldDelegate {
+@objc open class YNSearchViewController: UIViewController, UITextFieldDelegate {
     open var delegate: YNSearchDelegate? {
         didSet {
             self.ynSearchView.delegate = delegate
@@ -18,11 +18,11 @@ open class YNSearchViewController: UIViewController, UITextFieldDelegate {
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
     
-    open var ynSearchTextfieldView: YNSearchTextFieldView!
-    open var ynSearchView: YNSearchView!
+    @objc open var ynSearchTextfieldView: YNSearchTextFieldView!
+    @objc open var ynSearchView: YNSearchView!
     
-    open var ynSerach = YNSearch()
-    open var ynDelegate: YNSearchViewControllerDelegate?
+    @objc open var ynSerach = YNSearch()
+    @objc open var ynDelegate: YNSearchViewControllerDelegate?
     
     override open func viewDidLoad() {
         super.viewDidLoad()
