@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol YNSearchDelegate: YNSearchMainViewDelegate, YNSearchListViewDelegate { }
+public protocol YNSearchDelegate: YNSearchMainViewDelegate, YNSearchListViewDelegate, YNSearchViewControllerDelegate { }
 
 @objc public protocol YNSearchMainViewDelegate {
     func ynCategoryButtonClicked(text: String)
@@ -33,6 +33,10 @@ public protocol YNSearchDelegate: YNSearchMainViewDelegate, YNSearchListViewDele
     
 }
 
+@objc public protocol  YNSearchViewControllerDelegate {
+    func requestDataReload()
+}
+
 public extension YNSearchMainViewDelegate {
     func ynSearchMainViewSearchHistoryChanged() { }
 }
@@ -43,5 +47,6 @@ public extension YNSearchListViewDelegate {
     func ynSearchListViewDidScroll() { }
 
 }
+
 
 
