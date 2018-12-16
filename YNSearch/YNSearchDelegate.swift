@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol YNSearchDelegate: YNSearchMainViewDelegate, YNSearchListViewDelegate, YNSearchViewControllerDelegate { }
+@objc public protocol YNSearchDelegate: YNSearchMainViewDelegate, YNSearchListViewDelegate, YNSearchViewControllerDelegate { }
 
 @objc public protocol YNSearchMainViewDelegate {
     func ynCategoryButtonClicked(text: String)
