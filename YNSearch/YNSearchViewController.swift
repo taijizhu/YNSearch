@@ -21,7 +21,7 @@ import UIKit
     @objc open var ynSearchTextfieldView: YNSearchTextFieldView!
     @objc open var ynSearchView: YNSearchView!
     
-    @objc open var ynSearch = YNSearch()
+    @objc open var ynSerach = YNSearch()
     @objc open var ynDelegate: YNSearchViewControllerDelegate?
     
     override open func viewDidLoad() {
