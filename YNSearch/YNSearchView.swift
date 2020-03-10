@@ -28,11 +28,11 @@ import UIKit
         self.ynSearchListView.ynSearchListViewDelegate = self
         self.ynSearchListView.isHidden = true
         
-        if let clearHistoryButton = self.ynSearchMainView.clearHistoryButton {
-        self.ynScrollView.contentSize = CGSize(width: self.frame.width, height: clearHistoryButton.frame.origin.y + clearHistoryButton.frame.height + 20)
-        } else {
-            self.ynScrollView.contentSize = CGSize(width: self.frame.width, height: self.frame.height)
-        }
+      //  if let clearHistoryButton = self.ynSearchMainView.clearHistoryButton {
+      //  self.ynScrollView.contentSize = CGSize(width: self.frame.width, height: clearHistoryButton.frame.origin.y + clearHistoryButton.frame.height + 20)
+      //  } else {
+        self.ynScrollView.contentSize = CGSize(width: self.frame.width, height: self.frame.height)
+      //  }
         self.ynScrollView.addSubview(self.ynSearchListView)
         
         self.addSubview(ynScrollView)
